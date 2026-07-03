@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲーム | Neoyuki Dev</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Neoyuki Dev</div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="works.html">実績</a>
+    <a href="game.html" class="active">ゲーム</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-top:1rem">
+    <h1>ブロック崩し</h1>
+    <p class="lead">
+      JavaScriptとCanvasだけで作った簡単なゲームです。
+      業務システムだけでなく、こうした動きのあるWebアプリも制作できます。
+    </p>
+  </section>
+
+  <section id="game-wrap">
+    <canvas id="gameCanvas" width="480" height="360"></canvas>
+    <p id="game-status">マウス、または ← → キーでバーを操作してください</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Neoyuki Dev — <a href="index.html#contact">お問い合わせはこちら</a>
+</footer>
+
+<script src="game.js"></script>
+</body>
+</html>
