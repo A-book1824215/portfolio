@@ -297,6 +297,127 @@ footer a {
   font-size: 1rem;
 }
 
+/* CSV整形ツール */
+.tool-panel {
+  background: var(--surface);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  margin-bottom: 1.6rem;
+}
+
+.tool-panel h2 {
+  margin-top: 0;
+}
+
+.option-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.option-row label,
+.column-picker label {
+  font-family: var(--font-gothic);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.option-row input[type="checkbox"],
+.column-picker input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.15rem;
+  accent-color: var(--accent);
+}
+
+.column-picker {
+  border-top: 1px dashed var(--border);
+  padding-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.picker-note {
+  font-family: var(--font-gothic);
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-top: 0;
+}
+
+#column-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+}
+
+.form-row input[type="file"] {
+  font-family: var(--font-gothic);
+  font-size: 0.92rem;
+  border: none;
+  background: none;
+  padding: 0.2rem 0;
+}
+
+.stats {
+  font-family: var(--font-gothic);
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #FDFCFA;
+}
+
+.preview-table {
+  border-collapse: collapse;
+  font-family: var(--font-gothic);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.preview-table th,
+.preview-table td {
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.6rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.preview-table th {
+  background: rgba(123, 93, 46, 0.10);
+  color: var(--accent-dark);
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.result-actions .cta {
+  margin-top: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-sub {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid var(--accent) !important;
+}
+
+.cta-sub:hover {
+  background: rgba(123, 93, 46, 0.08);
+}
+
 /* スキップナビゲーション */
 .skip-nav {
   position: absolute;

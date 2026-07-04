@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV整形ツール | Neoyuki Dev</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-nav" href="#main-content">メインコンテンツへスキップ</a>
+<header>
+  <div class="logo">Neoyuki Dev</div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="works.html">実績</a>
+    <a href="tools.html" class="active">ツール</a>
+    <a href="game.html">ゲーム</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero" style="padding-top:1rem">
+    <h1>CSV整形ツール</h1>
+    <p class="lead">
+      CSVファイルの重複削除・空行削除・列の絞り込みをブラウザだけで行えるツールです。
+      データはお使いのパソコンの中だけで処理され、<strong>サーバーには一切送信されません</strong>。
+      Shift_JIS（Excel標準の文字コード）のファイルも自動判定して読み込めます。
+    </p>
+  </section>
+
+  <section class="tool-panel">
+    <h2>1. データを読み込む</h2>
+    <div class="form-row">
+      <label for="csv-file">CSVファイルを選択（UTF-8 / Shift_JIS 自動判定）</label>
+      <input type="file" id="csv-file" accept=".csv,.txt,text/csv">
+    </div>
+    <div class="form-row">
+      <label for="csv-text">またはここに直接貼り付け</label>
+      <textarea id="csv-text" rows="8" placeholder="名前,部署,メール&#10;山田太郎,営業部,taro@example.com&#10;..."></textarea>
+    </div>
+  </section>
+
+  <section class="tool-panel">
+    <h2>2. 処理内容を選ぶ</h2>
+    <div class="option-row">
+      <label><input type="checkbox" id="opt-header" checked> 1行目を見出し（ヘッダー）として扱う</label>
+      <label><input type="checkbox" id="opt-empty" checked> 空行を削除する</label>
+      <label><input type="checkbox" id="opt-dup"> 重複した行を削除する（2回目以降の同じ行を除去）</label>
+      <label><input type="checkbox" id="opt-trim"> 各セルの前後の余分な空白を削除する</label>
+    </div>
+    <div id="column-picker" class="column-picker" hidden>
+      <p class="picker-note">残したい列にチェックを入れてください：</p>
+      <div id="column-list"></div>
+    </div>
+    <button type="button" class="cta" id="run-btn">処理を実行</button>
+  </section>
+
+  <section class="tool-panel" id="result-panel" hidden>
+    <h2>3. 結果</h2>
+    <p id="stats" class="stats" role="status"></p>
+    <div class="table-scroll">
+      <table class="preview-table" id="preview-table"></table>
+    </div>
+    <p class="picker-note" id="preview-note"></p>
+    <div class="result-actions">
+      <button type="button" class="cta" id="download-btn">CSVをダウンロード（Excel対応）</button>
+      <button type="button" class="cta cta-sub" id="copy-btn">クリップボードにコピー</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Neoyuki Dev — <a href="index.html#contact">お問い合わせはこちら</a>
+</footer>
+
+<script src="tools.js"></script>
+</body>
+</html>
