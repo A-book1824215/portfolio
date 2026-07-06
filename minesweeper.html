@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マインスイーパー | Neoyuki Dev</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Neoyuki Dev</div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="works.html">実績</a>
+    <a href="tools.html">ツール</a>
+    <a href="game.html" class="active">ゲーム</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-top:1rem">
+    <h1>マインスイーパー</h1>
+    <p class="lead">
+      数字は「まわり8マスにある地雷の数」です。地雷のないマスをすべて開けばクリア。
+      右クリック（スマホは🚩モードかタップ長押し）で、地雷と思うマスに旗を立てられます。
+    </p>
+  </section>
+
+  <section id="ms-wrap">
+    <div class="ms-hud">
+      <div class="ms-level" role="group" aria-label="難易度">
+        <button type="button" class="cta cta-sub ms-level-btn active" data-level="easy">初級</button>
+        <button type="button" class="cta cta-sub ms-level-btn" data-level="normal">中級</button>
+        <button type="button" class="cta cta-sub ms-level-btn" data-level="hard">上級</button>
+      </div>
+      <div class="ms-meters">
+        <span class="ms-meter">🚩 <span id="ms-mines">10</span></span>
+        <button type="button" id="ms-reset" aria-label="はじめから">🙂</button>
+        <span class="ms-meter">⏱ <span id="ms-time">0</span></span>
+      </div>
+    </div>
+
+    <div class="board-scroll">
+      <div id="ms-board" aria-label="マインスイーパーの盤面"></div>
+    </div>
+
+    <p id="ms-status">マスをタップ（クリック）して開始 ｜ 最初の1マスは必ず安全です</p>
+    <button type="button" id="ms-flag-mode" class="cta cta-sub">🚩モード：OFF</button>
+    <p class="ms-best">ベストタイム — 初級: <span id="ms-best-easy">--</span>秒 ／ 中級: <span id="ms-best-normal">--</span>秒 ／ 上級: <span id="ms-best-hard">--</span>秒</p>
+  </section>
+
+  <section>
+    <h2>ほかのゲーム</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>ブロック崩し</h3>
+        <p>ステージ制・アイテム付きのブロック崩し。<a class="link" href="game.html">遊んでみる →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Neoyuki Dev — <a href="index.html#contact">お問い合わせはこちら</a>
+</footer>
+
+<script src="minesweeper.js"></script>
+</body>
+</html>

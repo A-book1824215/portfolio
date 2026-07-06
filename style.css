@@ -418,6 +418,145 @@ footer a {
   background: rgba(123, 93, 46, 0.08);
 }
 
+/* マインスイーパー */
+#ms-wrap {
+  text-align: center;
+  --ms-cell: 34px;
+}
+
+.ms-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ms-level-btn {
+  margin-top: 0;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.ms-level-btn.active {
+  background: var(--accent);
+  color: #FDFAF5;
+}
+
+.ms-meters {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.ms-meter {
+  font-family: var(--font-gothic);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+  min-width: 4.5rem;
+}
+
+#ms-reset {
+  font-size: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.board-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+#ms-board {
+  display: grid;
+  gap: 3px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 8px;
+  background: #D8D2C6;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  touch-action: manipulation;
+}
+
+#ms-board.ms-small {
+  --ms-cell: 26px;
+}
+
+.ms-cell {
+  width: var(--ms-cell);
+  height: var(--ms-cell);
+  border: 1px solid #B8B0A2;
+  border-radius: 5px;
+  background: #EDE8DE;
+  box-shadow: inset 0 -2px 0 rgba(90, 64, 24, 0.18);
+  font-family: var(--font-gothic);
+  font-weight: 700;
+  font-size: calc(var(--ms-cell) * 0.5);
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.ms-cell.open {
+  background: #FDFCFA;
+  box-shadow: none;
+  border-color: #DDD7CC;
+  cursor: default;
+}
+
+.ms-cell.mine { background: #F3D9CE; }
+.ms-cell.boom { background: var(--accent-2); }
+.ms-cell.flagged { background: #F0E6D2; }
+
+.ms-cell.n1 { color: #2F5D8C; }
+.ms-cell.n2 { color: #4C7A3F; }
+.ms-cell.n3 { color: #9B4F38; }
+.ms-cell.n4 { color: #5A4018; }
+.ms-cell.n5 { color: #7D3520; }
+.ms-cell.n6 { color: #3A6E6A; }
+.ms-cell.n7 { color: #3A3530; }
+.ms-cell.n8 { color: #5E5851; }
+
+#ms-status {
+  font-family: var(--font-gothic);
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#ms-flag-mode {
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+#ms-flag-mode.ms-flag-on {
+  background: var(--accent);
+  color: #FDFAF5;
+}
+
+.ms-best {
+  font-family: var(--font-gothic);
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  #ms-wrap {
+    --ms-cell: 30px;
+  }
+}
+
 /* スキップナビゲーション */
 .skip-nav {
   position: absolute;

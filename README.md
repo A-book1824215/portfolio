@@ -11,7 +11,7 @@
 | [トップ](https://a-book1824215.github.io/portfolio/) | 自己紹介・提供できること・お問い合わせフォーム |
 | [実績](https://a-book1824215.github.io/portfolio/works.html) | 制作実績の紹介（CSV整形ツール、寮費管理システム、売上・日報自動集計 など） |
 | [ツール](https://a-book1824215.github.io/portfolio/tools.html) | ブラウザ上で動くCSV整形ツール（空行・重複行の削除、文字コード自動判定など） |
-| [ゲーム](https://a-book1824215.github.io/portfolio/game.html) | JavaScript製ブロック崩し |
+| [ゲーム](https://a-book1824215.github.io/portfolio/game.html) | JavaScript製ブロック崩し・[マインスイーパー](https://a-book1824215.github.io/portfolio/minesweeper.html) |
 
 ## 技術構成
 
