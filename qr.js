@@ -8,6 +8,9 @@ const statusEl = document.getElementById("qr-status");
 const downloadBtn = document.getElementById("qr-download");
 const copyBtn = document.getElementById("qr-copy");
 
+// 日本語を正しく変換するため、文字コードをUTF-8に設定（初期値は日本語非対応）
+qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
+
 const PREVIEW_SIZE = 256;
 let currentQR = null;
 let debounceId = null;
