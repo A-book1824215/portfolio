@@ -21,14 +21,17 @@
   <section class="hero" style="padding-top:1rem">
     <h1>ブロック崩し</h1>
     <p class="lead">
-      JavaScriptとCanvasだけで作った簡単なゲームです。
+      JavaScriptとCanvasだけで作ったゲームです。ステージが進むごとに速く・難しくなります。
+      ブロックを壊すとたまに落ちてくるアイテムを取ると、バーが広がったりボールが増えたりします。
       業務システムだけでなく、こうした動きのあるWebアプリも制作できます。
     </p>
   </section>
 
   <section id="game-wrap">
     <canvas id="gameCanvas" width="480" height="360"></canvas>
-    <p id="game-status">マウス、または ← → キーでバーを操作してください</p>
+    <p id="game-status">クリックまたはタップでスタート ｜ マウス・タッチ・← →キーでバーを操作</p>
+    <button type="button" id="pause-btn" class="cta cta-sub">一時停止</button>
+    <button type="button" id="mute-btn" class="cta cta-sub">音：ON</button>
   </section>
 </main>
 

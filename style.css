@@ -225,7 +225,7 @@ footer a {
 }
 
 #gameCanvas {
-  background: #1A1510;
+  background: #E6E1D8;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   touch-action: none;
