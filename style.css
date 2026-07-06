@@ -418,6 +418,34 @@ footer a {
   background: rgba(123, 93, 46, 0.08);
 }
 
+/* QRコード生成ツール */
+.form-row select {
+  font-family: var(--font-gothic);
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: #FDFCFA;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.qr-preview {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#qr-canvas {
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
 /* マインスイーパー */
 #ms-wrap {
   text-align: center;

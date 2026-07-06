@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QRコード生成ツール | Neoyuki Dev</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-nav" href="#main-content">メインコンテンツへスキップ</a>
+<header>
+  <div class="logo">Neoyuki Dev</div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="works.html">実績</a>
+    <a href="tools.html" class="active">ツール</a>
+    <a href="game.html">ゲーム</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero" style="padding-top:1rem">
+    <h1>QRコード生成ツール</h1>
+    <p class="lead">
+      URLや文字を入力するだけで、その場でQRコードを作成できます。
+      すべてブラウザ内で処理され、入力した内容は<strong>サーバーには一切送信されません</strong>。
+      日本語もそのまま変換できます。
+    </p>
+  </section>
+
+  <section class="tool-panel">
+    <h2>1. 内容を入力する</h2>
+    <div class="form-row">
+      <label for="qr-input">QRコードにしたいURL・文字</label>
+      <textarea id="qr-input" rows="4" placeholder="https://example.com&#10;（URLのほか、お店の案内文・Wi-Fi情報・連絡先など自由に入力できます）"></textarea>
+    </div>
+    <div class="form-row">
+      <label for="qr-size">画像サイズ（ダウンロード時）</label>
+      <select id="qr-size">
+        <option value="256">小（256px — 画面表示用）</option>
+        <option value="512" selected>中（512px — 印刷物に標準）</option>
+        <option value="1024">大（1024px — ポスターなど大きな印刷物）</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="tool-panel" id="qr-result" hidden>
+    <h2>2. できあがり</h2>
+    <div class="qr-preview">
+      <canvas id="qr-canvas" role="img" aria-label="生成されたQRコード"></canvas>
+    </div>
+    <p id="qr-status" class="stats" role="status"></p>
+    <p class="picker-note">スマホのカメラをかざして、正しく読み取れるか確認してからお使いください。</p>
+    <div class="result-actions">
+      <button type="button" class="cta" id="qr-download">画像をダウンロード（PNG）</button>
+      <button type="button" class="cta cta-sub" id="qr-copy">画像をコピー</button>
+    </div>
+  </section>
+
+  <section class="tool-panel" id="qr-error" hidden>
+    <h2>⚠ 変換できませんでした</h2>
+    <p id="qr-error-msg" class="picker-note"></p>
+  </section>
+
+  <section>
+    <h2>ほかのツール</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>CSV整形ツール</h3>
+        <p>重複削除・空行削除・列の絞り込みをブラウザだけで。<a class="link" href="tools.html">使ってみる →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Neoyuki Dev — <a href="index.html#contact">お問い合わせはこちら</a>
+</footer>
+
+<script src="qrcode.js"></script>
+<script src="qr.js"></script>
+</body>
+</html>
