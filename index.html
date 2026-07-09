@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neoyuki Dev | 業務自動化・小規模Webシステム制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Zen+Maru+Gothic:wght@400;500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,13 +23,37 @@
 
 <main id="main-content">
   <section class="hero">
-    <p class="role">業務自動化 / 小規模Webシステム制作</p>
-    <h1>ネオユキ</h1>
-    <p class="lead">
-      手作業のExcel集計やスプレッドシート管理を、Python・Google Apps Script・簡単なWebアプリで自動化します。
-      「いつも時間がかかっている作業」を、仕組み化してラクにするのが得意です。
-    </p>
-    <a class="cta" href="#contact">お仕事のご相談はこちら</a>
+    <div class="hero-grid">
+      <div>
+        <p class="role">業務自動化 / 小規模Webシステム制作</p>
+        <h1>ぐちゃぐちゃな作業を、<br>整った仕組みに。</h1>
+        <p class="lead">
+          手作業のExcel集計やスプレッドシート管理を、Python・Google Apps Script・簡単なWebアプリで自動化します。
+          「いつも時間がかかっている作業」を、仕組み化してラクにするのが得意です。
+        </p>
+        <a class="cta" href="#contact">お仕事のご相談はこちら</a>
+      </div>
+      <div>
+        <div class="tidy-grid" aria-hidden="true">
+          <div class="row">
+            <span>氏名</span><span>内容</span><span>金額</span>
+          </div>
+          <div class="row">
+            <span>山田太郎</span><span>寮費 6月分</span><span>¥42,000</span>
+          </div>
+          <div class="row">
+            <span>佐藤花子</span><span>寮費 6月分</span><span>¥38,500</span>
+          </div>
+          <div class="row">
+            <span>鈴木一郎</span><span>寮費 6月分</span><span>¥42,000</span>
+          </div>
+          <div class="row">
+            <span>高橋みどり</span><span>寮費 6月分</span><span>¥40,200</span>
+          </div>
+        </div>
+        <p class="tidy-caption">Before: バラバラの記入 → After: 自動で整列した台帳</p>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -53,7 +80,7 @@
 
   <section>
     <h2>進め方</h2>
-    <div class="cards">
+    <div class="cards cards-plain">
       <div class="card">
         <h3>1. ヒアリング</h3>
         <p>今困っている作業内容と、理想の状態をお伺いします。</p>
