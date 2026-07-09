@@ -1,126 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-  <g fill="none" stroke="#3A3530" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.15">
-
-    <!-- 矢じり1 (105,120) rot-15 -->
-    <g transform="translate(105,120) rotate(-15)">
-      <path d="M 0,-32 L 14,4 L 7,-1 L 10,18 L 0,12 L -10,18 L -7,-1 L -14,4 Z"/>
-      <path d="M -10,-8 L 10,-3" stroke-width="0.7"/>
-      <path d="M -11,4 L 10,8" stroke-width="0.7"/>
-    </g>
-
-    <!-- 手斧1 (300,100) rot20 -->
-    <g transform="translate(300,100) rotate(20)">
-      <path d="M 0,-38 C 22,-24 26,2 20,24 C 14,40 -14,40 -20,24 C -26,2 -22,-24 0,-38 Z"/>
-      <path d="M -16,-10 L 16,-4" stroke-width="0.7"/>
-      <path d="M -17,8 L 15,15" stroke-width="0.7"/>
-      <path d="M -13,24 L 11,28" stroke-width="0.7"/>
-    </g>
-
-    <!-- 石刃1 (510,155) rot8 -->
-    <g transform="translate(510,155) rotate(8)">
-      <path d="M -5,-38 L 5,-38 C 8,-18 8,5 6,38 L -6,38 C -8,5 -8,-18 -5,-38 Z"/>
-      <line x1="0" y1="-38" x2="0" y2="38" stroke-width="0.7"/>
-      <path d="M -4,-20 L 4,-15 M -4,-4 L 4,2 M -4,12 L 4,18" stroke-width="0.6"/>
-    </g>
-
-    <!-- 矢じり2 small (700,95) rot-35 scale0.65 -->
-    <g transform="translate(700,95) rotate(-35) scale(0.65)">
-      <path d="M 0,-32 L 14,4 L 7,-1 L 10,18 L 0,12 L -10,18 L -7,-1 L -14,4 Z"/>
-      <path d="M -10,-8 L 10,-3" stroke-width="0.7"/>
-    </g>
-
-    <!-- 細石器 (200,175) rot-30 -->
-    <g transform="translate(200,175) rotate(-30)">
-      <path d="M -5,-20 L 5,-18 L 9,0 L 7,18 L -3,22 L -10,14 L -12,-4 Z"/>
-      <path d="M -4,-12 L 7,-6" stroke-width="0.6"/>
-    </g>
-
-    <!-- 掻器1 (145,340) rot-10 -->
-    <g transform="translate(145,340) rotate(-10)">
-      <path d="M -26,10 Q 0,-28 26,10 Z"/>
-      <path d="M -26,10 L -19,1 L -12,10 L -5,1 L 0,10 L 5,1 L 12,10 L 19,1 L 26,10" stroke-width="0.7"/>
-      <path d="M -12,-6 L 12,-1" stroke-width="0.6"/>
-    </g>
-
-    <!-- 尖頭器1 (340,285) rot25 -->
-    <g transform="translate(340,285) rotate(25)">
-      <path d="M 0,-44 C 18,-22 18,22 0,44 C -18,22 -18,-22 0,-44 Z"/>
-      <line x1="0" y1="-44" x2="0" y2="44" stroke-width="0.7"/>
-      <path d="M -12,-15 L 12,-9" stroke-width="0.6"/>
-      <path d="M -14,2 L 14,8" stroke-width="0.6"/>
-      <path d="M -12,20 L 12,25" stroke-width="0.6"/>
-    </g>
-
-    <!-- 石核 (530,310) rot15 -->
-    <g transform="translate(530,310) rotate(15)">
-      <path d="M 2,-26 L 18,-12 L 24,6 L 18,22 L 2,28 L -16,20 L -22,4 L -16,-14 Z"/>
-      <path d="M -8,-10 L 14,-2" stroke-width="0.6"/>
-      <path d="M -10,8 L 12,16" stroke-width="0.6"/>
-      <path d="M 2,-26 L 18,-12 M 18,-12 L 24,6" stroke-width="0.5"/>
-    </g>
-
-    <!-- 矢じり3 (700,295) rot40 -->
-    <g transform="translate(700,295) rotate(40)">
-      <path d="M 0,-32 L 14,4 L 7,-1 L 10,18 L 0,12 L -10,18 L -7,-1 L -14,4 Z"/>
-      <path d="M -10,-8 L 10,-3" stroke-width="0.7"/>
-      <path d="M -11,4 L 10,8" stroke-width="0.7"/>
-    </g>
-
-    <!-- 石刃2 small (100,490) rot-22 scale0.8 -->
-    <g transform="translate(100,490) rotate(-22) scale(0.8)">
-      <path d="M -5,-38 L 5,-38 C 8,-18 8,5 6,38 L -6,38 C -8,5 -8,-18 -5,-38 Z"/>
-      <line x1="0" y1="-38" x2="0" y2="38" stroke-width="0.7"/>
-    </g>
-
-    <!-- 手斧2 small (295,490) rot-30 scale0.7 -->
-    <g transform="translate(295,490) rotate(-30) scale(0.7)">
-      <path d="M 0,-38 C 22,-24 26,2 20,24 C 14,40 -14,40 -20,24 C -26,2 -22,-24 0,-38 Z"/>
-      <path d="M -16,-10 L 16,-4" stroke-width="0.7"/>
-      <path d="M -15,10 L 14,17" stroke-width="0.7"/>
-    </g>
-
-    <!-- 掻器2 (490,465) rot45 scale0.9 -->
-    <g transform="translate(490,465) rotate(45) scale(0.9)">
-      <path d="M -26,10 Q 0,-28 26,10 Z"/>
-      <path d="M -26,10 L -19,1 L -12,10 L -5,1 L 0,10 L 5,1 L 12,10 L 19,1 L 26,10" stroke-width="0.7"/>
-    </g>
-
-    <!-- 尖頭器2 small (695,510) rot-20 scale0.72 -->
-    <g transform="translate(695,510) rotate(-20) scale(0.72)">
-      <path d="M 0,-44 C 18,-22 18,22 0,44 C -18,22 -18,-22 0,-44 Z"/>
-      <line x1="0" y1="-44" x2="0" y2="44" stroke-width="0.7"/>
-      <path d="M -12,-15 L 12,-9" stroke-width="0.6"/>
-      <path d="M -13,2 L 13,8" stroke-width="0.6"/>
-    </g>
-
-    <!-- 矢じり4 (125,700) rot12 scale0.85 -->
-    <g transform="translate(125,700) rotate(12) scale(0.85)">
-      <path d="M 0,-32 L 14,4 L 7,-1 L 10,18 L 0,12 L -10,18 L -7,-1 L -14,4 Z"/>
-      <path d="M -10,-8 L 10,-3" stroke-width="0.7"/>
-      <path d="M -11,4 L 10,8" stroke-width="0.7"/>
-    </g>
-
-    <!-- 掻器3 small (320,695) rot-40 scale0.75 -->
-    <g transform="translate(320,695) rotate(-40) scale(0.75)">
-      <path d="M -26,10 Q 0,-28 26,10 Z"/>
-      <path d="M -26,10 L -19,1 L -12,10 L -5,1 L 0,10 L 5,1 L 12,10 L 19,1 L 26,10" stroke-width="0.7"/>
-    </g>
-
-    <!-- 石刃3 (510,680) rot18 -->
-    <g transform="translate(510,680) rotate(18)">
-      <path d="M -5,-38 L 5,-38 C 8,-18 8,5 6,38 L -6,38 C -8,5 -8,-18 -5,-38 Z"/>
-      <line x1="0" y1="-38" x2="0" y2="38" stroke-width="0.7"/>
-      <path d="M -4,-20 L 4,-14 M -4,5 L 4,10" stroke-width="0.6"/>
-    </g>
-
-    <!-- 手斧3 (700,700) rot-15 scale0.75 -->
-    <g transform="translate(700,700) rotate(-15) scale(0.75)">
-      <path d="M 0,-38 C 22,-24 26,2 20,24 C 14,40 -14,40 -20,24 C -26,2 -22,-24 0,-38 Z"/>
-      <path d="M -16,-10 L 16,-4" stroke-width="0.7"/>
-      <path d="M -16,10 L 14,17" stroke-width="0.7"/>
-      <path d="M -13,24 L 11,28" stroke-width="0.7"/>
-    </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <!-- 方眼の細線（元帳・グラフ用紙のイメージ） -->
+  <g stroke="#1E261F" stroke-width="1" opacity="0.06">
+    <path d="M0,80 H640 M0,160 H640 M0,240 H640 M0,320 H640 M0,400 H640 M0,480 H640 M0,560 H640"/>
+    <path d="M80,0 V640 M160,0 V640 M240,0 V640 M320,0 V640 M400,0 V640 M480,0 V640 M560,0 V640"/>
+  </g>
+  <!-- グリーンバー元帳の帯 -->
+  <g fill="#BFD8B8" opacity="0.16">
+    <rect x="0" y="80" width="640" height="80"/>
+    <rect x="0" y="240" width="640" height="80"/>
+    <rect x="0" y="400" width="640" height="80"/>
+    <rect x="0" y="560" width="640" height="80"/>
+  </g>
+  <!-- セル参照のゴースト文字 -->
+  <g fill="#1E261F" opacity="0.05" font-family="monospace" font-size="13" font-weight="700">
+    <text x="90" y="35">A</text>
+    <text x="170" y="35">B</text>
+    <text x="250" y="35">C</text>
+    <text x="330" y="35">D</text>
+    <text x="410" y="35">E</text>
+    <text x="490" y="35">F</text>
+    <text x="570" y="35">G</text>
+    <text x="20" y="70">1</text>
+    <text x="20" y="150">2</text>
+    <text x="20" y="230">3</text>
+    <text x="20" y="310">4</text>
+    <text x="20" y="390">5</text>
+    <text x="20" y="470">6</text>
+    <text x="20" y="550">7</text>
+    <text x="20" y="630">8</text>
   </g>
 </svg>
