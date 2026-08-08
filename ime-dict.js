@@ -1,5 +1,5 @@
 // ================= 語彙データ =================
-// 「今後の語彙追加はこの配列に対して行う」— 原本は C:\dev\ime-emoji-dict\ime_emoji_dict.txt
+// 「今後の語彙追加はこの配列に対して行う」— 原本（初出の元データ。以後の正はこの配列）は C:\dev\ime-emoji-dict\ime_emoji_dict.txt
 // yomi: IME変換の読み（ひらがな） / word: 変換で出したい絵文字・顔文字
 // type: "emoji" | "kaomoji" / cat: カテゴリkey（CATEGORIES参照）
 
