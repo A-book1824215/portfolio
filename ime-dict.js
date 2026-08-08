@@ -253,3 +253,128 @@ function filterEntries(entries, cats, type) {
     return e.type === type;
   });
 }
+
+// ================= DOM操作 =================
+
+const categoryListEl = document.getElementById("category-list");
+const selectAllBtn = document.getElementById("select-all-btn");
+const deselectAllBtn = document.getElementById("deselect-all-btn");
+const countEl = document.getElementById("dict-count");
+const previewBodyEl = document.getElementById("dict-preview-body");
+const downloadBtn = document.getElementById("dict-download");
+const errorPanel = document.getElementById("dict-error");
+const instructionsMsime = document.getElementById("instructions-msime");
+const instructionsGoogle = document.getElementById("instructions-google");
+
+const PREVIEW_ROWS = 10;
+
+// カテゴリチェックボックスを生成（初期状態：全選択）
+CATEGORIES.forEach((c) => {
+  const label = document.createElement("label");
+  const cb = document.createElement("input");
+  cb.type = "checkbox";
+  cb.value = c.key;
+  cb.checked = true;
+  cb.className = "cat-checkbox";
+  label.appendChild(cb);
+  label.appendChild(document.createTextNode(" " + c.label));
+  categoryListEl.appendChild(label);
+});
+
+function selectedCategories() {
+  return Array.from(document.querySelectorAll(".cat-checkbox"))
+    .filter((cb) => cb.checked)
+    .map((cb) => cb.value);
+}
+
+function selectedType() {
+  return document.querySelector('input[name="dict-type"]:checked').value;
+}
+
+function selectedFormat() {
+  return document.querySelector('input[name="dict-format"]:checked').value;
+}
+
+function currentEntries() {
+  return filterEntries(DICT, selectedCategories(), selectedType());
+}
+
+function renderPreview(entries) {
+  previewBodyEl.innerHTML = "";
+  entries.slice(0, PREVIEW_ROWS).forEach((e) => {
+    const tr = document.createElement("tr");
+    const tdYomi = document.createElement("td");
+    tdYomi.textContent = e.yomi;
+    const tdWord = document.createElement("td");
+    tdWord.textContent = e.word;
+    tr.appendChild(tdYomi);
+    tr.appendChild(tdWord);
+    previewBodyEl.appendChild(tr);
+  });
+}
+
+function update() {
+  const entries = currentEntries();
+  countEl.textContent = `選択中: ${entries.length}件`;
+  renderPreview(entries);
+  downloadBtn.disabled = entries.length === 0;
+  errorPanel.hidden = true;
+}
+
+function updateInstructions() {
+  const format = selectedFormat();
+  instructionsMsime.hidden = format !== "msime";
+  instructionsGoogle.hidden = format !== "google";
+}
+
+categoryListEl.addEventListener("change", update);
+document
+  .querySelectorAll('input[name="dict-type"]')
+  .forEach((r) => r.addEventListener("change", update));
+document
+  .querySelectorAll('input[name="dict-format"]')
+  .forEach((r) => r.addEventListener("change", updateInstructions));
+
+selectAllBtn.addEventListener("click", () => {
+  document.querySelectorAll(".cat-checkbox").forEach((cb) => (cb.checked = true));
+  update();
+});
+
+deselectAllBtn.addEventListener("click", () => {
+  document.querySelectorAll(".cat-checkbox").forEach((cb) => (cb.checked = false));
+  update();
+});
+
+function pad2(n) {
+  return String(n).padStart(2, "0");
+}
+
+downloadBtn.addEventListener("click", () => {
+  const entries = currentEntries();
+  if (entries.length === 0) {
+    errorPanel.hidden = false;
+    return;
+  }
+  const format = selectedFormat();
+  const text = buildTsv(entries);
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}${pad2(now.getMonth() + 1)}${pad2(now.getDate())}`;
+  const filename = `ime_dict_${entries.length}件_${dateStr}.txt`;
+
+  let blob;
+  if (format === "msime") {
+    blob = new Blob([toUtf16LEBytes(text)], { type: "text/plain" });
+  } else {
+    blob = new Blob([new TextEncoder().encode(text)], { type: "text/plain" });
+  }
+
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+// 初期表示
+update();
+updateInstructions();
