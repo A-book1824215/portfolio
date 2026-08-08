@@ -30,13 +30,15 @@ description: portfolioサイトのworks.html（実績ページ）に新しい制
 
 portfolioはHTML/CSS/JSのみの静的サイト。claude-in-chrome拡張はlocalhostに権限がなく使えないため、**Playwright MCP**で確認する:
 
-1. PowerShellでローカルサーバーを起動する（Bashの`&`はシェル終了で死ぬので使わない）:
+1. PowerShellでローカルサーバーを起動する（Bashの`&`はシェル終了で死ぬので使わない）。`-PassThru`でPIDを控えておくと後で止めやすい:
    ```powershell
-   Start-Process -WindowStyle Hidden python -ArgumentList "-m","http.server","8000" -WorkingDirectory "C:\Users\user\iCloudDrive\dev\portfolio"
+   Start-Process -WindowStyle Hidden python -ArgumentList "-m","http.server","8000" -WorkingDirectory "C:\dev\portfolio" -PassThru | Select-Object Id
    ```
 2. `mcp__plugin_playwright_playwright__browser_navigate` で `http://localhost:8000/works.html` を開く
 3. `browser_take_screenshot` で新しいカードが崩れず表示されているか確認（配色・フォント・カード間の余白）
-4. 確認後、PIDを指定して `Stop-Process` でサーバーを止める
+   - スクリーンショットとログは**カレントディレクトリ**（通常 `C:\dev`）に `works-*.png` と `.playwright-mcp\` として出力される。portfolio配下ではないので、確認後に忘れず削除する
+   - 読み込み時の `favicon.ico` 404 コンソールエラーは既知・無害（ローカルサーバーのみ）
+4. 確認後、PIDを指定して `Stop-Process` でサーバーを止め、上記の一時ファイルも削除する
 5. CSSを一緒に変更した場合はブラウザキャッシュに注意（`style.css?v=2` のようにクエリを付けてキャッシュバストする）
 
 ## 注意点
