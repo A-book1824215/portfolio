@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IME顔文字・絵文字辞書メーカー | Neoyuki Dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Zen+Maru+Gothic:wght@400;500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-nav" href="#main-content">メインコンテンツへスキップ</a>
+<header>
+  <div class="logo">Neoyuki Dev</div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="works.html">実績</a>
+    <a href="tools.html" class="active">ツール</a>
+    <a href="game.html">ゲーム</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero hero-center" style="padding-top:1rem">
+    <p class="cell-tag">SHEET 07 — IME辞書作成</p>
+    <h1>IME顔文字・絵文字辞書メーカー</h1>
+    <p class="lead">
+      「うれしい」「もうしわけございません」のように感情や挨拶をそのまま入力すると、
+      対応する絵文字・顔文字が変換候補に出るIMEユーザー辞書を作成できます。
+      すべてブラウザ内で処理され、<strong>入力内容はサーバーには送信されません</strong>。
+    </p>
+  </section>
+
+  <section class="tool-panel">
+    <h2>1. 収録する内容を選ぶ</h2>
+    <fieldset class="option-group">
+      <legend>カテゴリ</legend>
+      <div id="category-list"></div>
+      <div class="result-actions">
+        <button type="button" class="cta cta-sub" id="select-all-btn">すべて選択</button>
+        <button type="button" class="cta cta-sub" id="deselect-all-btn">すべて解除</button>
+      </div>
+    </fieldset>
+    <fieldset class="option-group">
+      <legend>種類</legend>
+      <div class="option-row">
+        <label><input type="radio" name="dict-type" value="both" checked> 両方</label>
+        <label><input type="radio" name="dict-type" value="emoji"> 絵文字のみ</label>
+        <label><input type="radio" name="dict-type" value="kaomoji"> 顔文字のみ</label>
+      </div>
+    </fieldset>
+    <p class="stats" id="dict-count" role="status"></p>
+  </section>
+
+  <section class="tool-panel">
+    <h2>2. 形式を選んでダウンロード</h2>
+    <fieldset class="option-group">
+      <legend>形式</legend>
+      <div class="option-row">
+        <label><input type="radio" name="dict-format" value="msime" checked> MS-IME用（UTF-16LE・BOM付き）</label>
+        <label><input type="radio" name="dict-format" value="google"> Google日本語入力用（UTF-8）</label>
+      </div>
+    </fieldset>
+    <div class="column-picker">
+      <p class="picker-note">プレビュー（先頭10件）</p>
+      <div class="table-scroll">
+        <table class="preview-table" id="dict-preview">
+          <thead><tr><th>読み</th><th>変換される文字</th></tr></thead>
+          <tbody id="dict-preview-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="result-actions">
+      <button type="button" class="cta" id="dict-download">ファイルをダウンロード</button>
+    </div>
+  </section>
+
+  <section class="tool-panel" id="dict-error" hidden role="alert">
+    <h2>⚠ ダウンロードできません</h2>
+    <p class="picker-note">1件以上選んでください。</p>
+  </section>
+
+  <section class="tool-panel">
+    <h2>3. 取り込み手順</h2>
+    <div id="instructions-msime">
+      <ol class="picker-note">
+        <li>タスクバーの入力方式アイコン（「あ」または「A」）を右クリック</li>
+        <li>「ユーザー辞書ツール」を選択</li>
+        <li>メニューの「辞書」→「テキストファイルからの登録」</li>
+        <li>ダウンロードしたファイルを選んで開く</li>
+        <li>「うれしい」などと入力して変換し、絵文字・顔文字が候補に出ることを確認</li>
+      </ol>
+    </div>
+    <div id="instructions-google" hidden>
+      <ol class="picker-note">
+        <li>タスクバーのIMEアイコンを右クリック（または「Google 日本語入力 辞書ツール」を検索して起動）</li>
+        <li>メニューの「管理」→「新規辞書にインポート」（または「選択した辞書にインポート」）</li>
+        <li>ダウンロードしたファイルを選んで開く</li>
+        <li>「うれしい」などと入力して変換し、絵文字・顔文字が候補に出ることを確認</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>ほかのツール</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>QRコード生成ツール</h3>
+        <p>URLや文字をその場でQRコードに。<a class="link" href="qr.html">使ってみる →</a></p>
+      </div>
+      <div class="card">
+        <h3>CSV整形ツール</h3>
+        <p>重複削除・空行削除・列の絞り込みをブラウザだけで。<a class="link" href="tools.html">使ってみる →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Neoyuki Dev — <a href="index.html#contact">お問い合わせはこちら</a>
+</footer>
+
+<script src="ime-dict.js"></script>
+</body>
+</html>
