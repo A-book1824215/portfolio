@@ -318,7 +318,7 @@ function update() {
   countEl.textContent = `選択中: ${entries.length}件`;
   renderPreview(entries);
   downloadBtn.disabled = entries.length === 0;
-  errorPanel.hidden = true;
+  errorPanel.hidden = entries.length !== 0;
 }
 
 function updateInstructions() {
