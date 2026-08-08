@@ -58,7 +58,7 @@ const DICT = [
   { yomi: "だいすき", word: "❤️", type: "emoji", cat: "emotion" },
   { yomi: "だいすき", word: "💕", type: "emoji", cat: "emotion" },
   { yomi: "らぶ", word: "❤️", type: "emoji", cat: "emotion" },
-  { yomi: "ふまん", word: "(-\"-)", type: "kaomoji", cat: "emotion" },
+  { yomi: “ふまん”, word: “(-“-)”, type: “kaomoji”, cat: “emotion” },
   { yomi: "あんしん", word: "(*^^*)", type: "kaomoji", cat: "emotion" },
   { yomi: "しんぱい", word: "(´・ω・`)", type: "kaomoji", cat: "emotion" },
   { yomi: "どきどき", word: "(*´∀`*)", type: "kaomoji", cat: "emotion" },
